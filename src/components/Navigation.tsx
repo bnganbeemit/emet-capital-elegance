@@ -18,9 +18,9 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <a href="/" className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:opacity-80 transition-opacity">
               Emet Capital
-            </h1>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -34,6 +34,9 @@ const Navigation = () => {
                 {item.label}
               </a>
             ))}
+            <a href="tel:0485952651" className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200">
+              📞 0485 952 651
+            </a>
           </div>
 
           {/* Desktop CTA */}
@@ -70,7 +73,10 @@ const Navigation = () => {
                   {item.label}
                 </a>
               ))}
-              <div className="pt-4">
+              <div className="pt-4 space-y-3">
+                <a href="tel:0485952651" className="block text-primary font-semibold text-center py-2">
+                  📞 0485 952 651
+                </a>
                 <Button variant="premium" size="sm" className="w-full">
                   Get Quote
                 </Button>
