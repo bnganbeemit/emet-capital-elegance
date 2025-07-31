@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroSkyline from "@/assets/hero-skyline.jpg";
+import financialSkyline from "@/assets/financial-skyline.jpg";
 import { ArrowRight, Play } from "lucide-react";
 
 const HeroSection = () => {
@@ -8,8 +8,8 @@ const HeroSection = () => {
       {/* Hero Background */}
       <div className="absolute inset-0 z-0">
         <img 
-          src={heroSkyline} 
-          alt="City Skyline" 
+          src={financialSkyline} 
+          alt="Financial District" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-background/30" />
