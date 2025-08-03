@@ -38,10 +38,10 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Company</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Our Team</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Careers</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">News</a></li>
+              <li><a href="/about" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
+              <li><a href="/insights" className="text-muted-foreground hover:text-primary transition-colors">Insights</a></li>
+              <li><a href="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
+              <li><a href="/services" className="text-muted-foreground hover:text-primary transition-colors">Services</a></li>
             </ul>
           </div>
 
@@ -51,7 +51,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground text-sm">1800 EMET CAP</span>
+                <a href="tel:0485952651" className="text-muted-foreground text-sm hover:text-primary transition-colors">0485 952 651</a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-primary" />
@@ -71,9 +71,9 @@ const Footer = () => {
               © 2024 Emet Capital. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms of Service</a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">AFSL 123456</a>
+              <a href="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
+              <a href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms & Conditions</a>
+              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">AFSL Regulated</a>
             </div>
           </div>
         </div>

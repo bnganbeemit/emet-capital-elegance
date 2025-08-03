@@ -4,8 +4,13 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import StatsSection from "@/components/StatsSection";
 import ProcessSection from "@/components/ProcessSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import TrustSignals from "@/components/TrustSignals";
+import AboutSnippet from "@/components/AboutSnippet";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { SEOHead } from "@/components/SEOHead";
+import { OrganizationStructuredData } from "@/components/StructuredData";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Index = () => {
@@ -34,17 +39,26 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Emet Capital - Bespoke Commercial Lending Solutions"
+        description="Australia's premier commercial lending brokerage. Expert asset finance, debtor funding & structured lending solutions engineered for ambitious businesses."
+      />
+      <OrganizationStructuredData />
+      
       <Navigation />
       <HeroSection />
       <div id="services">
         <ServicesSection />
       </div>
+      <TrustSignals />
       <div id="about">
         <StatsSection />
       </div>
+      <TestimonialsSection />
       <div id="process">
         <ProcessSection />
       </div>
+      <AboutSnippet />
       <div id="contact">
         <ContactSection />
       </div>
