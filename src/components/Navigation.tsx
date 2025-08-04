@@ -1,22 +1,30 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import DarkModeToggle from "@/components/DarkModeToggle";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Services", href: "/services" },
-    { label: "About", href: "/about" },
+    { label: "Home", href: "/" },
     { label: "Insights", href: "/insights" },
-    { label: "Process", href: "#process" },
+    { label: "Services", href: "/services" },
     { label: "Contact", href: "/contact" },
   ];
 
   return (
     <>
+      {/* Skip to content link */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:transition-all"
+      >
+        Skip to content
+      </a>
+
       {/* Main Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass">
+      <nav className="sticky top-0 left-0 right-0 z-50 glass">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
@@ -41,18 +49,45 @@ const Navigation = () => {
 
             {/* Desktop Contact & CTA */}
             <div className="hidden lg:flex items-center space-x-4">
-              <a href="tel:0485952651" className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center gap-2">
+              <DarkModeToggle />
+              <a 
+                href="tel:0485952651" 
+                className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 flex items-center gap-2"
+                onClick={() => {
+                  // GA4 custom event
+                  if (typeof window !== 'undefined' && 'gtag' in window) {
+                    (window as any).gtag('event', 'call_now_click', {
+                      event_category: 'engagement',
+                      event_label: 'header_phone'
+                    });
+                  }
+                }}
+              >
                 <span className="text-sm">📞</span>
                 <span className="hidden xl:inline">0485 952 651</span>
                 <span className="xl:hidden">Call Now</span>
               </a>
-              <Button variant="premium" size="sm" className="hover-lift">
+              <Button 
+                variant="premium" 
+                size="sm" 
+                className="hover-lift"
+                onClick={() => {
+                  // GA4 custom event
+                  if (typeof window !== 'undefined' && 'gtag' in window) {
+                    (window as any).gtag('event', 'get_quote_click', {
+                      event_category: 'conversion',
+                      event_label: 'header_cta'
+                    });
+                  }
+                }}
+              >
                 Get Quote
               </Button>
             </div>
 
             {/* Mobile Contact & Menu */}
             <div className="lg:hidden flex items-center space-x-3">
+              <DarkModeToggle />
               <a href="tel:0485952651" className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200">
                 📞
               </a>
@@ -61,7 +96,7 @@ const Navigation = () => {
                 size="icon"
                 onClick={() => setIsOpen(!isOpen)}
                 className="h-10 w-10"
-                aria-label="Toggle menu"
+                aria-label={isOpen ? "Close menu" : "Open menu"}
               >
                 {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </Button>

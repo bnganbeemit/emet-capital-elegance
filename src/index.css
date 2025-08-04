@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    /* Professional Commercial Finance Color Palette */
+    /* Professional Commercial Finance Color Palette - Dark Mode Default */
     --background: 222 22% 6%;   /* Deep charcoal background */
     --foreground: 0 0% 98%;     /* Pure white text */
 
@@ -63,6 +63,53 @@
     --sidebar-border: 222 15% 18%;
     --sidebar-ring: 210 100% 50%;
   }
+
+  /* Light Mode Theme */
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 4.9%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 222 47.4% 11.2%;
+
+    --muted: 210 40% 98%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 98%;
+    --accent-foreground: 222 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 210 100% 50%;
+
+    /* Light mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%), hsl(210 80% 60%));
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.8), hsl(210 40% 98% / 0.6));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 40% 98%), hsl(214.3 31.8% 91.4%));
+    
+    /* Light glassmorphism */
+    --glass-bg: hsl(0 0% 100% / 0.8);
+    --glass-border: hsl(214.3 31.8% 91.4% / 0.8);
+    
+    /* Light shadows */
+    --shadow-luxury: 0 25px 50px -12px hsl(222 84% 4.9% / 0.15);
+    --shadow-card: 0 10px 30px -5px hsl(222 84% 4.9% / 0.1);
+    --shadow-glow: 0 0 30px hsl(210 100% 50% / 0.15);
+    --shadow-inner: inset 0 1px 0 hsl(0 0% 100% / 0.1);
+  }
 }
 
 @layer base {
@@ -76,6 +123,14 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-feature-settings: 'cv11', 'ss01';
     font-variation-settings: 'opsz' 32;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Ensure smooth theme transitions */
+  * {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
   }
 
   h1, h2, h3, h4, h5, h6 {

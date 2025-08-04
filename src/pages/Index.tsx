@@ -46,7 +46,8 @@ const Index = () => {
       <OrganizationStructuredData />
       
       <Navigation />
-      <HeroSection />
+      <main id="main-content">
+        <HeroSection />
       <div id="services">
         <ServicesSection />
       </div>
@@ -59,10 +60,11 @@ const Index = () => {
         <ProcessSection />
       </div>
       <AboutSnippet />
-      <div id="contact">
-        <ContactSection />
-      </div>
-      <Footer />
+        <div id="contact">
+          <ContactSection />
+        </div>
+        <Footer />
+      </main>
     </div>
   );
 };

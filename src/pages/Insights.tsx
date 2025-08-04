@@ -7,6 +7,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CalendarDays, Clock, ArrowRight, TrendingUp, FileText, DollarSign } from "lucide-react";
+import NewsletterSignup from "@/components/NewsletterSignup";
+import BridgingLoanCalculator from "@/components/BridgingLoanCalculator";
+import ReadingProgress from "@/components/ReadingProgress";
 
 interface Article {
   id: string;
@@ -25,27 +28,39 @@ const Insights = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const articlesPerPage = 6;
 
-  // Sample insights data
+  // Sample insights data with interactive calculator as featured post
   const insights: Article[] = [
+    {
+      id: 'bridging-loan-calculator',
+      title: 'Interactive Bridging Loan Calculator',
+      excerpt: 'Calculate your bridging loan costs, terms, and monthly repayments with our interactive calculator tool.',
+      content: 'calculator', // Special marker for calculator component
+      image: '/assets/business-meeting.jpg',
+      author: 'Finance Team',
+      publishDate: '2024-01-20',
+      readTime: 'Interactive Tool',
+      category: 'Calculators',
+      featured: true
+    },
     {
       id: '1',
       title: 'Commercial Property Investment Trends in 2024',
       excerpt: 'Discover the latest trends shaping Australia\'s commercial property investment landscape and how smart financing can maximize returns.',
       content: 'Full article content...',
-      image: '/assets/commercial-property.jpg',
-      author: 'Emet Capital Team',
+      image: '/assets/business-meeting.jpg',
+      author: 'Finance Team',
       publishDate: '2024-01-15',
       readTime: '5 min read',
       category: 'Property Finance',
-      featured: true
+      featured: false
     },
     {
       id: '2', 
       title: 'Equipment Finance: Maximizing Cash Flow for Growth',
       excerpt: 'Learn how strategic equipment financing can preserve working capital while enabling business expansion and technological upgrades.',
       content: 'Full article content...',
-      image: '/assets/equipment-finance.jpg',
-      author: 'Emet Capital Team',
+      image: '/assets/business-handshake.jpg',
+      author: 'Finance Team',
       publishDate: '2024-01-10',
       readTime: '4 min read',
       category: 'Asset Finance',
@@ -56,8 +71,8 @@ const Insights = () => {
       title: 'Debtor Finance Solutions for Seasonal Businesses',
       excerpt: 'How invoice factoring can smooth cash flow challenges for businesses with seasonal revenue patterns.',
       content: 'Full article content...',
-      image: '/assets/debtor-finance.jpg',
-      author: 'Emet Capital Team',
+      image: '/assets/financial-skyline.jpg',
+      author: 'Finance Team',
       publishDate: '2024-01-05',
       readTime: '6 min read',
       category: 'Working Capital',
@@ -65,7 +80,7 @@ const Insights = () => {
     }
   ];
 
-  const categories = ['All', 'Property Finance', 'Asset Finance', 'Working Capital', 'Market Analysis'];
+  const categories = ['All', 'Calculators', 'Property Finance', 'Asset Finance', 'Working Capital', 'Market Analysis'];
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const filteredInsights = selectedCategory === 'All' 
@@ -91,19 +106,34 @@ const Insights = () => {
         path="/insights"
       />
       <BreadcrumbStructuredData items={breadcrumbItems} />
+      <ReadingProgress />
       
       <Navigation />
+      
+      {/* Main Content */}
+      <main id="main-content">
       
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-hero">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Commercial Finance <span className="bg-gradient-primary bg-clip-text text-transparent">Insights</span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Expert analysis, market trends, and strategic insights from Australia's commercial lending specialists.
-            </p>
+          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="lg:col-span-2">
+              <div className="text-center fade-in">
+                <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                  Commercial Finance <span className="bg-gradient-primary bg-clip-text text-transparent">Insights</span>
+                </h1>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Expert analysis, market trends, and strategic insights from Australia's commercial lending specialists.
+                </p>
+              </div>
+            </div>
+            
+            {/* Newsletter Signup Sidebar */}
+            <div className="lg:col-span-1">
+              <div className="sticky top-32">
+                <NewsletterSignup />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -148,14 +178,27 @@ const Insights = () => {
                         {featuredInsight.readTime}
                       </div>
                     </div>
-                    <Button variant="premium" className="w-fit group">
-                      Read Full Article
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
+                    {featuredInsight.id === 'bridging-loan-calculator' ? (
+                      <p className="text-sm text-primary font-medium">Interactive calculator below ↓</p>
+                    ) : (
+                      <Button variant="premium" className="w-fit group">
+                        Read Full Article
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </Button>
+                    )}
                   </div>
                 </div>
               </Card>
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Interactive Calculator Section - only show if featured insight is calculator */}
+      {featuredInsight?.id === 'bridging-loan-calculator' && (
+        <section className="py-16">
+          <div className="container mx-auto px-6">
+            <BridgingLoanCalculator />
           </div>
         </section>
       )}
@@ -259,6 +302,7 @@ const Insights = () => {
       </section>
 
       <Footer />
+      </main>
     </div>
   );
 };

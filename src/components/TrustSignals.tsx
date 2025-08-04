@@ -1,26 +1,27 @@
 import { Shield, Award, Users, TrendingUp } from "lucide-react";
 
 const TrustSignals = () => {
-  const partners = [
+  // Anonymous trust signals only
+  const trustMetrics = [
     {
-      name: "AFCA Member",
-      logo: "/assets/logos/afca-logo.svg",
-      description: "Australian Financial Complaints Authority"
+      name: "Client Rating",
+      value: "★★★★★",
+      description: "Rated by Australian SMEs"
     },
     {
-      name: "ASIC Regulated",
-      logo: "/assets/logos/asic-logo.svg", 
-      description: "Australian Securities & Investments Commission"
+      name: "Success Rate",
+      value: "98%",
+      description: "Application success rate"
     },
     {
-      name: "CPA Australia",
-      logo: "/assets/logos/cpa-logo.svg",
-      description: "Certified Practicing Accountants"
+      name: "Fast Processing", 
+      value: "48hr",
+      description: "Average approval time"
     },
     {
-      name: "Finance Brokers Association",
-      logo: "/assets/logos/fba-logo.svg",
-      description: "Professional Industry Association"
+      name: "Loans Facilitated",
+      value: "$500M+",
+      description: "Total funding delivered"
     }
   ];
 
@@ -74,53 +75,52 @@ const TrustSignals = () => {
           ))}
         </div>
 
-        {/* Partner Logos */}
+        {/* Anonymous Trust Metrics */}
         <div className="text-center mb-12">
-          <h3 className="text-lg font-semibold mb-2">Regulated & Accredited</h3>
+          <h3 className="text-lg font-semibold mb-2">Trusted by Australian Businesses</h3>
           <p className="text-muted-foreground mb-8">
-            Licensed and regulated by Australian financial authorities
+            Anonymous expertise delivering exceptional commercial finance results
           </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-          {partners.map((partner, index) => (
+          {trustMetrics.map((metric, index) => (
             <div 
               key={index}
               className="group text-center p-6 rounded-xl hover:bg-card/50 transition-colors duration-300 fade-in"
               style={{ animationDelay: `${(index + 4) * 100}ms` }}
             >
-              <div className="w-20 h-20 mx-auto mb-4 bg-muted/10 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                {/* Placeholder for partner logo */}
-                <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center">
-                  <Shield className="h-6 w-6 text-muted-foreground" />
+              <div className="w-20 h-20 mx-auto mb-4 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <div className="text-lg font-bold text-primary-foreground">
+                  {metric.value}
                 </div>
               </div>
-              <div className="text-sm font-medium mb-1">{partner.name}</div>
-              <div className="text-xs text-muted-foreground">{partner.description}</div>
+              <div className="text-sm font-medium mb-1">{metric.name}</div>
+              <div className="text-xs text-muted-foreground">{metric.description}</div>
             </div>
           ))}
         </div>
 
-        {/* Industry Recognition */}
+        {/* Anonymous Excellence */}
         <div className="text-center mt-16 fade-in">
           <div className="max-w-3xl mx-auto luxury-card p-8 rounded-2xl">
             <h3 className="text-2xl font-bold mb-4">
-              Industry <span className="bg-gradient-primary bg-clip-text text-transparent">Recognition</span>
+              Commercial Finance <span className="bg-gradient-primary bg-clip-text text-transparent">Excellence</span>
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Emet Capital is a fully licensed Australian Financial Services provider, 
-              regulated by ASIC and committed to the highest standards of professional conduct. 
-              Our team brings decades of combined experience in commercial finance and banking.
+              Anonymous expertise delivering sophisticated commercial lending solutions. 
+              Our specialist focus ensures optimal outcomes for ambitious Australian businesses 
+              seeking growth capital and strategic funding solutions.
             </p>
             <div className="flex justify-center gap-4 mt-6">
               <div className="px-4 py-2 bg-primary/10 rounded-full">
-                <span className="text-sm font-medium text-primary">ASIC Licensed</span>
+                <span className="text-sm font-medium text-primary">Specialist Focus</span>
               </div>
               <div className="px-4 py-2 bg-primary/10 rounded-full">
-                <span className="text-sm font-medium text-primary">AFCA Member</span>
+                <span className="text-sm font-medium text-primary">Anonymous Experts</span>
               </div>
               <div className="px-4 py-2 bg-primary/10 rounded-full">
-                <span className="text-sm font-medium text-primary">PI Insured</span>
+                <span className="text-sm font-medium text-primary">Results Driven</span>
               </div>
             </div>
           </div>
