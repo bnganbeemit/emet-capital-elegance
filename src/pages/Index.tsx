@@ -38,7 +38,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-20">
       <SEOHead 
         title="Emet Capital - Bespoke Commercial Lending Solutions"
         description="Australia's premier commercial lending brokerage. Expert asset finance, debtor funding & structured lending solutions engineered for ambitious businesses."

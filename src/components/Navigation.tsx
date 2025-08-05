@@ -24,13 +24,17 @@ const Navigation = () => {
       </a>
 
       {/* Main Navigation */}
-      <nav className="sticky top-0 left-0 right-0 z-50 glass">
+      <nav className="fixed top-0 left-0 right-0 z-50 glass backdrop-blur-md bg-background/80 border-b border-border">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center">
-              <a href="/" className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:opacity-80 transition-opacity">
-                Emet Capital
+              <a href="/" className="hover:opacity-80 transition-opacity">
+                <img 
+                  src="/lovable-uploads/dd627168-96cf-4c54-81fc-9fd17d143b2c.png" 
+                  alt="Emet Capital Logo" 
+                  className="h-12 w-auto"
+                />
               </a>
             </div>
 

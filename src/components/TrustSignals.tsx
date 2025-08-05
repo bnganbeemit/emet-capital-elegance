@@ -34,9 +34,9 @@ const TrustSignals = () => {
     },
     {
       icon: Users,
-      value: "500+",
-      label: "Happy Clients",
-      description: "Businesses we've helped grow and succeed"
+      value: "$1M",
+      label: "Avg. Deal Size",
+      description: "Sophisticated commercial lending solutions"
     },
     {
       icon: Award,
@@ -75,11 +75,11 @@ const TrustSignals = () => {
           ))}
         </div>
 
-        {/* Anonymous Trust Metrics */}
+        {/* Trust Metrics */}
         <div className="text-center mb-12">
           <h3 className="text-lg font-semibold mb-2">Trusted by Australian Businesses</h3>
           <p className="text-muted-foreground mb-8">
-            Anonymous expertise delivering exceptional commercial finance results
+            Delivering exceptional commercial finance results with proven expertise
           </p>
         </div>
 
@@ -101,26 +101,26 @@ const TrustSignals = () => {
           ))}
         </div>
 
-        {/* Anonymous Excellence */}
+        {/* Excellence Statement */}
         <div className="text-center mt-16 fade-in">
           <div className="max-w-3xl mx-auto luxury-card p-8 rounded-2xl">
             <h3 className="text-2xl font-bold mb-4">
               Commercial Finance <span className="bg-gradient-primary bg-clip-text text-transparent">Excellence</span>
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Anonymous expertise delivering sophisticated commercial lending solutions. 
+              Delivering sophisticated commercial lending solutions with proven market expertise. 
               Our specialist focus ensures optimal outcomes for ambitious Australian businesses 
               seeking growth capital and strategic funding solutions.
             </p>
             <div className="flex justify-center gap-4 mt-6">
               <div className="px-4 py-2 bg-primary/10 rounded-full">
-                <span className="text-sm font-medium text-primary">Specialist Focus</span>
+                <span className="text-sm font-medium text-primary">Market Expertise</span>
               </div>
               <div className="px-4 py-2 bg-primary/10 rounded-full">
-                <span className="text-sm font-medium text-primary">Anonymous Experts</span>
+                <span className="text-sm font-medium text-primary">Proven Results</span>
               </div>
               <div className="px-4 py-2 bg-primary/10 rounded-full">
-                <span className="text-sm font-medium text-primary">Results Driven</span>
+                <span className="text-sm font-medium text-primary">Client Focus</span>
               </div>
             </div>
           </div>

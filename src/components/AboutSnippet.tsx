@@ -3,30 +3,24 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, LinkedinIcon, Award, Users } from "lucide-react";
 
 const AboutSnippet = () => {
-  const teamMembers = [
+  const expertise = [
     {
-      name: "David Mitchell",
-      role: "Principal & Founder",
-      experience: "15+ years commercial finance",
-      image: "/assets/team/david-mitchell.jpg",
-      linkedin: "https://linkedin.com/in/davidmitchell",
-      specialties: ["Structured Lending", "Asset Finance"]
+      title: "Asset Finance",
+      description: "Equipment and machinery funding solutions",
+      icon: "🏗️",
+      years: "15+"
     },
     {
-      name: "Sarah Rodriguez", 
-      role: "Senior Finance Broker",
-      experience: "12+ years banking & finance",
-      image: "/assets/team/sarah-rodriguez.jpg",
-      linkedin: "https://linkedin.com/in/sarahrodriguez",
-      specialties: ["Debtor Funding", "Working Capital"]
+      title: "Working Capital", 
+      description: "Cash flow and operational funding",
+      icon: "💼",
+      years: "12+"
     },
     {
-      name: "James Chen",
-      role: "Credit Analyst",
-      experience: "8+ years credit assessment", 
-      image: "/assets/team/james-chen.jpg",
-      linkedin: "https://linkedin.com/in/jameschen",
-      specialties: ["Risk Assessment", "Due Diligence"]
+      title: "Structured Finance",
+      description: "Complex commercial lending solutions",
+      icon: "🏢",
+      years: "18+"
     }
   ];
 
@@ -75,56 +69,20 @@ const AboutSnippet = () => {
               </Button>
             </div>
 
-            {/* Team Grid */}
+            {/* Expertise Areas */}
             <div className="grid gap-6">
-              {teamMembers.map((member, index) => (
+              {expertise.map((area, index) => (
                 <Card 
                   key={index} 
-                  className="luxury-card hover-lift group fade-in"
+                  className="luxury-card hover-lift group fade-in text-center"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <CardContent className="p-6">
-                    <div className="flex items-center gap-4">
-                      {/* Profile Image */}
-                      <div className="relative">
-                        <div className="w-16 h-16 rounded-full overflow-hidden bg-muted">
-                          {/* Placeholder avatar using initials */}
-                          <div className="w-full h-full bg-gradient-primary flex items-center justify-center">
-                            <span className="text-primary-foreground font-semibold text-lg">
-                              {member.name.split(' ').map(n => n[0]).join('')}
-                            </span>
-                          </div>
-                        </div>
-                        <a 
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="absolute -bottom-1 -right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-                        >
-                          <LinkedinIcon className="h-3 w-3 text-primary-foreground" />
-                        </a>
-                      </div>
-
-                      {/* Member Info */}
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
-                          {member.name}
-                        </h3>
-                        <p className="text-primary font-medium mb-1">{member.role}</p>
-                        <p className="text-sm text-muted-foreground mb-2">{member.experience}</p>
-                        
-                        {/* Specialties */}
-                        <div className="flex flex-wrap gap-1">
-                          {member.specialties.map((specialty, i) => (
-                            <span 
-                              key={i}
-                              className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full"
-                            >
-                              {specialty}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+                    <div className="text-4xl mb-4">{area.icon}</div>
+                    <h3 className="font-semibold text-lg mb-2 text-primary">{area.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{area.description}</p>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full">
+                      <span className="text-xs font-medium text-primary">{area.years} years experience</span>
                     </div>
                   </CardContent>
                 </Card>
