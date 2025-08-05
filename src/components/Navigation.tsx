@@ -29,17 +29,13 @@ const Navigation = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center">
-              <a href="/" className="hover:opacity-80 transition-opacity">
-                <img 
-                  src="/lovable-uploads/dd627168-96cf-4c54-81fc-9fd17d143b2c.png" 
-                  alt="Emet Capital Logo" 
-                  className="h-12 w-auto"
-                />
+              <a href="/" className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
+                Emet Capital
               </a>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
                 <a
                   key={item.label}
@@ -52,7 +48,7 @@ const Navigation = () => {
             </div>
 
             {/* Desktop Contact & CTA */}
-            <div className="hidden lg:flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-4">
               <DarkModeToggle />
               <a 
                 href="tel:0485952651" 
@@ -90,7 +86,7 @@ const Navigation = () => {
             </div>
 
             {/* Mobile Contact & Menu */}
-            <div className="lg:hidden flex items-center space-x-3">
+            <div className="md:hidden flex items-center space-x-3">
               <DarkModeToggle />
               <a href="tel:0485952651" className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200">
                 📞
@@ -109,7 +105,7 @@ const Navigation = () => {
 
           {/* Mobile Navigation */}
           {isOpen && (
-            <div className="lg:hidden py-6 border-t border-border">
+            <div className="md:hidden py-6 border-t border-border">
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
                   <a
