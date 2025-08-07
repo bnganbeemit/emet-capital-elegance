@@ -36,6 +36,8 @@ jobs:
         uses: skywarth/vite-github-pages-deployer@v1.5.0
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
 
   # Deployment job
   deploy:
