@@ -1,12 +1,12 @@
 import { Shield, Award, Users, TrendingUp } from "lucide-react";
 
 const TrustSignals = () => {
-  // Anonymous trust signals only
+  // Trust signals based on actual performance
   const trustMetrics = [
     {
-      name: "Client Rating",
-      value: "★★★★★",
-      description: "Rated by Australian SMEs"
+      name: "Google Rating",
+      value: "5.0",
+      description: "Based on 19 reviews"
     },
     {
       name: "Success Rate",
@@ -77,9 +77,9 @@ const TrustSignals = () => {
 
         {/* Trust Metrics */}
         <div className="text-center mb-12">
-          <h3 className="text-lg font-semibold mb-2">Trusted by Australian Businesses</h3>
+          <h3 className="text-lg font-semibold mb-2">Comprehensive Commercial Finance Solutions</h3>
           <p className="text-muted-foreground mb-8">
-            Delivering exceptional commercial finance results with proven expertise
+            Private lending • Bridging finance • Asset-based lending • Mortgages • Property development • Working capital
           </p>
         </div>
 
