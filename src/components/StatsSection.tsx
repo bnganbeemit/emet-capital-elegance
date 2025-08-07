@@ -6,23 +6,19 @@ const StatsSection = () => {
 
   const stats = [
     { 
-      label: "Approval Speed", 
-      value: 95, 
-      suffix: "%", 
-      description: "Within 48 hours" 
+      label: "Google Rating", 
+      value: "5.0", 
+      description: "Based on 19 reviews" 
     },
     { 
-      label: "Deal Success Rate", 
-      value: 98, 
-      suffix: "%", 
-      description: "Client satisfaction" 
+      label: "Success Rate", 
+      value: "98%", 
+      description: "Application success rate" 
     },
     { 
       label: "Average Deal Size", 
-      value: 2.5, 
-      suffix: "M", 
-      prefix: "$", 
-      description: "Commercial transactions" 
+      value: "$1M", 
+      description: "Sophisticated commercial lending" 
     },
   ];
 
@@ -64,21 +60,10 @@ const StatsSection = () => {
             >
               <div className="mb-4">
                 <div className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
-                  {stat.prefix}{stat.value}{stat.suffix}
+                  {stat.value}
                 </div>
                 <h3 className="text-xl font-semibold text-card-foreground">{stat.label}</h3>
                 <p className="text-sm text-muted-foreground mt-2">{stat.description}</p>
-              </div>
-              
-              {/* Animated Progress Bar */}
-              <div className="progress-luxury relative">
-                <div 
-                  className="absolute top-0 left-0 h-full bg-gradient-primary rounded-full transition-all duration-1500 ease-out"
-                  style={{ 
-                    width: isVisible ? `${stat.value}%` : '0%',
-                    transitionDelay: `${index * 300}ms`
-                  }}
-                />
               </div>
             </div>
           ))}
