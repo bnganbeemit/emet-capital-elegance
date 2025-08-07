@@ -1,4 +1,4 @@
-import { Building2, TrendingUp, FileCheck } from "lucide-react";
+import { Building2, TrendingUp, FileCheck, Home, Factory, Calculator } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
@@ -19,6 +19,24 @@ const ServicesSection = () => {
       title: "Structured Lending",
       description: "Complex commercial transactions made simple with our bespoke structured finance solutions.",
       features: ["Development Finance", "Acquisition Funding", "Refinancing"]
+    },
+    {
+      icon: Home,
+      title: "Private & Bridging Finance",
+      description: "Fast, flexible private lending and bridging solutions for immediate opportunities.",
+      features: ["Private Lending", "Bridging Loans", "Property Transitions"]
+    },
+    {
+      icon: Factory,
+      title: "Property Development",
+      description: "Specialized funding for commercial property development and construction projects.",
+      features: ["Development Finance", "Construction Loans", "Project Funding"]
+    },
+    {
+      icon: Calculator,
+      title: "Mortgage Solutions",
+      description: "Comprehensive first and second mortgage refinancing and top-up solutions.",
+      features: ["First Mortgages", "Second Mortgages", "Refinancing"]
     }
   ];
 
@@ -34,7 +52,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div 
               key={index} 
